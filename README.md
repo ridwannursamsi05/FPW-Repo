@@ -1,2 +1,3 @@
-# FPW-Repo
-Tugas Praktikum FPW 
+# Framework Pemrograman Web Repository
+Tugas Praktikum
+- Seputar Laravel 10
