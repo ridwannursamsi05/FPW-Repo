@@ -18,6 +18,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Basic Route
+Route::get('/about', function () {
+    return view('about');
+});
+
+// Named Route
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact.page');
+
+// ID Route
+Route::get('/pengguna/{id}', function ($id) {
+    $id= 1;
+    return "Profil Pengguna dengan ID: " . $id;
+});
+
+// Grouping route
+Route::prefix('manage')->group(function () {
+
+    Route::get('/edit-profile', function () {
+        return view ("manage.edit");
+    });
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
