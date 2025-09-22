@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    Selamat datang,<span class="font-semibold text-gray-600"> {{ Auth::user()->name }} </span>
+                    Selamat datang di dashboard, {{ Auth::user()->name }}! Anda masuk sebagai {{ Auth::user()->role }}.
                 </div>
             </div>
         </div>
