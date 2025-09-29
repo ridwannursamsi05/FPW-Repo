@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UtsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,17 @@ Route::get('/rahasia', function() {
 // Controller Route with Parameter
 Route::get('/product/{angka}', [ProductController::class, 'index']
 )->middleware(middleware: ['auth', 'RoleCheck:admin,owner']);
+
+// Route::get('/uts', function () {
+//     return 'Halaman UTS';
+// });
+
+Route::get('/uts', [UtsController::class, 'index']
+)->name('uts.index');
+Route::get('/uts/pemrograman-web', [UtsController::class, 'pemrogramanWeb'])
+->name('uts.pemrograman-web');
+Route::get('/uts/database', [UtsController::class, 'database'])
+->name('uts.database');
 
 
 require __DIR__.'/auth.php';
